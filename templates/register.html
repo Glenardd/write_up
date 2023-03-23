@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<title>register</title>  
+{% endblock %}
+
 {% block content %}
 <div class="admin-form">
     <form action="/register" method="POST">
@@ -21,7 +25,7 @@
             <td class="table-data">{{ Accounts.user_id }}</td>
             <td class="table-data">{{ Accounts.username }}</td>
             <td class="table-data">{{ Accounts.notes }}</td>
-            <td class="table-data"><a href="/remove_account/{{ Accounts.user_id }}">[X]</a></td>
+            <td class="table-data"><a href="/remove_account/{{ Accounts.user_id }}">del</a></td>
         </tr>
         {% endfor %}
     </table>
@@ -37,7 +41,7 @@
             <td class="table-data">{{ title.id }} </td>
             <td class="table-data">{{ title.title }} </td>
             <td class="table-data">{{ title.account_id }} </td>
-            <td class="table-data"><a href="/delete_note/{{ title.id }}">[x]</a></td>
+            <td class="table-data"><a href="/delete_note/{{ title.id }}">del</a></button></td>
         </tr>
         {% endfor %}
     </table>
@@ -62,6 +66,8 @@
             </tr>
             {% endfor %}
         </table>
+        <p id="message">All information seen here is for testing purposes only, also to show you, user, if your account is here. <br> 
+            I'll update everything here soon, <br> and all this datas shown here will be soon removed in the regsiter page. </p>
     </div>
 </div>
 <hr/>

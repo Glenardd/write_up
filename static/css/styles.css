@@ -7,6 +7,8 @@ body{
     right: 0;
     top: 0;
     bottom: 0;
+
+    z-index: 1;
 }
 
 .wrapper{
@@ -26,10 +28,14 @@ body{
 #titles-for{
     width: 30px;
 }
-
+.notes-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .box-1{
     background-color: rgb(207, 185, 155);
-    position: relative;
 }
 
 
@@ -101,6 +107,9 @@ textarea{
     justify-content: center;
     
     margin: 20px 0px 20px;
+}
+#message{
+    
 }
 
 .information-group{

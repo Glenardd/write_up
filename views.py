@@ -76,7 +76,8 @@ def add():
 def response(id_):
     if 'user-response' in session:
         usr_name = session['user-response']
-        return render_template('response.html',notes_id=Notes.query.get(id_), Notes=Notes, id_content=id_, usr_name=usr_name)
+
+        return render_template('response.html' ,notes_open=Notes.query.get(id_) ,Notes=Notes.query.all(), id_content=id_, usr_name=usr_name)
     else:
         return redirect(url_for('login'))
 

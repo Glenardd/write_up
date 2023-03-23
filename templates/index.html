@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<title>Your write-up's</title>  
+{% endblock %}
+
 {% block content %}
 <div class="wrapper">
     <!-- <button id="show-panel"><<</button> -->
     <div class="box-1" id="panel">
-        <header>{{ usr_name }}</header>
+        <header>
+            Account of: <b>{{ usr_name }}</b>
+            <a id="logout" href="/logout">Logout</a>
+        </header>
         <div class="form-1">
             <form action="/add" method="POST" id="form-group">
                 <input type="text" name="titles" id="titles-form" placeholder="add titles here here">
@@ -16,12 +23,11 @@
                 <tr>
                     <th>
                         <a href='/{{ notes.id }}'>{{ notes.title }}</a>
-                        <a id="delete-btn" href="/delete/{{ notes.id }}">[x]</a>
+                        <a id="delete-btn" href="/delete/{{ notes.id }}">X</a>
                     </th>
                 </tr>
                 {% endfor %}
             </table>
-            <a id="logout" href="/logout">Logout</a>  
         </div>
     </div>
     <div class="box-2">

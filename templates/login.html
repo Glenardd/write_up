@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<title>Write-up</title>  
+{% endblock %}
+
 {% block content %}
 <div class="login-wrapper">
     <form action="/" method="POST">
         <div class="login-inputs">
+            <h1>WRITE UP</h1>
             <input type="text" id="username-form" name="uname" placeholder="username">
             <input id="login-btn" type="submit" value="Login" placeholder="username">
         </div>
