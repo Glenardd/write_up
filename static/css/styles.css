@@ -1,0 +1,119 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+
+    background-color: rgb(110, 110, 110);
+    
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.form-1{
+    padding: 20px 20px 20px;
+}
+#titles-for{
+    width: 30px;
+}
+
+.box-1{
+    background-color: rgb(207, 185, 155);
+    position: relative;
+}
+
+
+.box-2{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    margin: auto;
+}
+textarea{
+    resize: none;
+
+    width:  calc(100vw - 300px);      /* calc and viewport to the rescue */
+    height: calc(100vh - 140px);
+}
+
+#spacer-1{
+    border: 1px black hidden;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+
+.login-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+}
+.login-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+#login-btn{
+    margin-top: 10px;
+    padding: 2px 20px 2px;
+}
+#register-link{
+    margin: 20px;
+}
+
+
+.admin-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-form{
+    margin:10px 10px 10px;
+}
+
+.group-table-1{
+    display: flex;
+    justify-content: center;
+    
+    margin: 20px 0px 20px;
+}
+.group-table-2{
+    display: flex;
+    justify-content: center;
+    
+    margin: 20px 0px 20px;
+}
+
+.information-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-group, .table-row, .table-headers, .table-data{
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+
+.information-1, .information-2{
+    margin: 0px 20px 0px;
+}
