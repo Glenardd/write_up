@@ -9,7 +9,6 @@ from config import app, db
 def login():
     if request.method == 'POST':
         uname = request.form['uname']
-
         session['user-response'] = uname
         session['user-notes'] = uname
         session['current_uid'] = uname
@@ -19,6 +18,8 @@ def login():
         if user_check == True:
             return redirect(url_for('home'))
         else:
+            for i in ['user-notes', 'user-response', 'current_uid']:
+                session.pop(i, None)
             return render_template('login.html')
     
     if 'user-notes' in session or 'user-response' in session:
