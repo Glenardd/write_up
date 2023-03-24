@@ -5,15 +5,29 @@
 {% endblock %}
 
 {% block content %}
-<div class="login-wrapper">
-    <form action="/" method="POST">
-        <div class="login-inputs">
-            <h1>WRITE UP</h1>
-            <input type="text" id="username-form" name="uname" placeholder="username">
-            <input id="login-btn" type="submit" value="Login" placeholder="username">
+<div class="form-wrapper">
+    <div class="title-container">
+        <h1 id="title">
+            WRITE-UP
+        </h1>
+    </div>
+    <div class="login-container">
+        <div class="group-login">
+            <form action="/" method="POST">
+                <div class="login">
+                    <div class="login-form">
+                        <label id="login-label"><h2>Log-in:</h2></label>
+                        <input type="text" id="username-form" name="uname" placeholder="username">
+                    </div>
+                    <div class="buttons-group">
+                        <input id="login-btn" type="submit" value="Login" placeholder="username">
+                        <button id="register-btn"><a id="register-link" href="/register">Register</a></button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
-    <a  id="register-link" href="/register">create account here</a>
+        
+    </div>
 </div>
 
 {% endblock%}
