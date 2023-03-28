@@ -39,7 +39,12 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-    return render_template('register.html', users=Account.query.all(), notes=Notes.query.all(), notesJoined=db.session.query(Notes, Account).outerjoin(Notes, Notes.account_id == Account.user_id).all())
+    return render_template('register.html')
+
+#administrator
+@app.route('/admin')
+def admin():
+    return render_template('admin.html', users=Account.query.all(), notes=Notes.query.all(), notesJoined=db.session.query(Notes, Account).outerjoin(Notes, Notes.account_id == Account.user_id).all())
 
 #after logging in go to the notes
 @app.route('/notes')
@@ -113,7 +118,7 @@ def remove_account(remove_id):
     db.session.delete(rm_id)
     db.session.commit()
 
-    return redirect(url_for('register'))
+    return redirect(url_for('admin'))
 
 #delete a note, admin only
 @app.route('/delete_note/<int:note_id>')
@@ -123,7 +128,7 @@ def note_del(note_id):
     db.session.delete(rm_note)
     db.session.commit()
 
-    return redirect(url_for('register'))
+    return redirect(url_for('admin'))
 
 #when logout session will be gone
 @app.route('/logout')

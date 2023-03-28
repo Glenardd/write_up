@@ -5,72 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="admin-form">
+<div class="form-wrapper">
+    <div class="login-container">
     <form action="/register" method="POST">
-        <input type="text" name="username-form" id="username" placeholder="username">
-        <input type="submit" id="register-btn" value="Register">
-        <a href="/">return to login</a>
+        <div class="login-form">
+            <h1 id="title">WriteUp</h1>
+            <input type="text" name="username-form" id="username-form" placeholder="username">
+            <input id="form-btn" type="submit" id="register-btn" value="REGISTER">
+            <a id="form-link" href="/">Login</a>
+        </div>
     </form>
-</div>
-<hr/>
-<div class="group-table-1">
-    <table class="informartion-1 table-group">
-        <tr class="table-row">
-            <th class="table-headers">ID</th>
-            <th class="table-headers">USERNAME</th>
-            <th class="table-headers">NOTES-ID</th>
-        </tr>
-        {% for Accounts in users %}
-        <tr class="table-row">
-            <td class="table-data">{{ Accounts.user_id }}</td>
-            <td class="table-data">{{ Accounts.username }}</td>
-            <td class="table-data">{{ Accounts.notes }}</td>
-            <td class="table-data"><a href="/remove_account/{{ Accounts.user_id }}">del</a></td>
-        </tr>
-        {% endfor %}
-    </table>
-    <br/>
-    <table class="information-2 table-group">
-        <tr class="table-row">
-            <th class="table-headers">ID </th>
-            <th class="table-headers">TITLE </th>
-            <th class="table-headers">ACCOUNT-ID </th>
-        </tr>
-        {% for title in notes %}
-        <tr class="table-row">
-            <td class="table-data">{{ title.id }} </td>
-            <td class="table-data">{{ title.title }} </td>
-            <td class="table-data">{{ title.account_id }} </td>
-            <td class="table-data"><a href="/delete_note/{{ title.id }}">del</a></button></td>
-        </tr>
-        {% endfor %}
-    </table>
-</div>
-<hr/>
-<div class="group-table-2">
-    <div class="information-group">
-        <h1>OUTER JOINED NOTES</h1>
-        <table class="table-group">
-            <tr class="table-row">
-                <th class="table-headers">ID</th>
-                <th class="table-headers">TITLE</th>
-                <th class="table-headers">CONTENT</th>
-                <th class="table-headers">ACCOUNT NAME</th>
-            </tr>
-            {% for join in notesJoined %}
-            <tr class="table-row">
-                <td class="table-data">{{ join.Notes.id }}</td>
-                <td class="table-data">{{ join.Notes.title }}</td>
-                <td class="table-data">{{ join.Notes.content }}</td>
-                <td class="table-data">{{ join.Account.username }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-        <p id="message">All information seen here is for testing purposes only, also to show you, user, if your account is here. <br> 
-            I'll update everything here soon, <br> and all these datas shown here will be soon removed in the register page.<br>
-            <b>THIS IS NOT THE FINAL DESIGN</b>. Btw, I made this website to practice backend on flask.
-        </p>
     </div>
 </div>
-<hr/>
 {% endblock %}
