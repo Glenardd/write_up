@@ -34,6 +34,14 @@ def register():
     if request.method == 'POST':
         username_form = request.form['username-form']
 
+        accounts_available = Account.query.all()
+
+        for account in accounts_available:
+            print(account)
+            if account.username == username_form:
+                return render_template('register.html')
+            
+        print('NO')
         user = Account(username=username_form)
 
         db.session.add(user)
