@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, request, session
+from flask import render_template, redirect, url_for, request, session, flash
 
 from models import Account, Notes
 from config import app, db
@@ -31,21 +31,19 @@ def login():
 #register name
 @app.route('/register', methods=['POST', 'GET'])
 def register():
-    if request.method == 'POST':
+    if request.method == 'POST': 
         username_form = request.form['username-form']
 
         accounts_available = Account.query.all()
 
         for account in accounts_available:
-            print(account)
             if account.username == username_form:
+                flash('Username already registered')
                 return render_template('register.html')
-            
-        print('NO')
         user = Account(username=username_form)
 
         db.session.add(user)
-        db.session.commit()
+        db.session.commit() 
 
     return render_template('register.html')
 

@@ -70,6 +70,17 @@ textarea{
     color: white;
 }
 
+.flash-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#flash-text{
+    color: white;
+    
+}
+
 /* login */
 .form-wrapper{
     display: flex;

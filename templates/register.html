@@ -11,8 +11,15 @@
         <div class="login-form">
             <h1 id="title">WriteUp</h1>
             <input type="text" name="username-form" id="username-form" placeholder="username">
-            <input id="form-btn" type="submit" id="register-btn" value="REGISTER">
+            <input id="form-btn" type="submit" value="REGISTER">
             <a id="form-link" href="/">Login</a>
+        </div>
+        <div class="flash-msg">
+            <div id="flash-text">
+                {% for message in get_flashed_messages() %}
+                    {{ message }}
+                {% endfor %}
+            </div>
         </div>
     </form>
     </div>
