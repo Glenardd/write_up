@@ -20,6 +20,9 @@ def login():
         else:
             for i in ['user-notes', 'user-response', 'current_uid']:
                 session.pop(i, None)
+            
+            flash(f'username: {uname} is not found')
+
             return render_template('login.html')
     
     if 'user-notes' in session or 'user-response' in session:
