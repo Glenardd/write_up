@@ -8,22 +8,22 @@
 <div class="wrapper">
     <!-- <button id="show-panel"><<</button> -->
     <div class="box-1" id="panel">
-        <header>
-            Account of: <b>{{ usr_name }}</b>
-            <a id="logout" href="/logout">Logout</a>
+        <header class="username-display">
+            <b id="account-name">{{ usr_name }}</b>
+            <a id="logout" href="/logout">Logout </a>
         </header>
         <div class="form-1">
             <form action="/add" method="POST" id="form-group">
                 <input type="text" name="titles" id="titles-form" placeholder="add titles here here">
-                <input type="submit" id="add-btn" value="Add">
+                <input type="submit" id="small-btn" value="Add">
             </form>
 
             <table class="notes-list">
                 {% for notes in Notes %}
                 <tr>
                     <th>
-                        <a href='/{{ notes.id }}'>{{ notes.title }}</a>
-                        <a id="delete-btn" href="/delete/{{ notes.id }}">X</a>
+                        <a id="notes-name" href='/{{ notes.id }}'>{{ notes.title }}</a>
+                        <a id="delete-btn" href="/delete/{{ notes.id }}">| X </a>
                     </th>
                 </tr>
                 {% endfor %}

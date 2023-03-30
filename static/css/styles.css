@@ -15,7 +15,7 @@ body{
     display: flex;
     flex-direction: row;
 
-    background-color: rgb(110, 110, 110);
+    background-color:#353535;
     
     height: 100vh;
     width: 100vw;
@@ -28,14 +28,9 @@ body{
 #titles-for{
     width: 30px;
 }
-.notes-list{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 .box-1{
-    background-color: rgb(207, 185, 155);
+    background-color: #f49560;
 }
 
 
@@ -49,9 +44,17 @@ body{
 textarea{
     resize: none;
 
-    width:  calc(100vw - 300px);      /* calc and viewport to the rescue */
-    height: calc(100vh - 140px);
+    background-color: #353535;
+
+    border-style: none;
+    outline: none;
+
+    color: white;
+
+    width:  calc(100vw - 350px);      /* calc and viewport to the rescue */
+    height: calc(100vh - 150px);
 }
+
 
 #spacer-1{
     border: 1px black hidden;
@@ -147,6 +150,75 @@ textarea{
 
     border-style: none;
 }
+
+/* accounts name */
+#warning{
+    font-family: 'Poppins', sans-serif;
+}
+
+#account-name{
+    font-family: 'Poppins', sans-serif;
+}
+
+#logout{
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.username-display{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+/* notes */
+#title-notes{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+
+.notes-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#notes-name{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+#notes-name:hover, #delete-btn:hover{
+    color: #995c3c;
+}
+
+#notes-name:active, #notes-name:focus { background: aqua; }
+
+
+#delete-btn{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    font-size: 10px;
+}
+
+#small-btn{
+    border-radius: 20px;
+    border-style: none;
+    background-color: #605656;
+    color: white;
+    padding: 2px 10px 2px;
+}
+
+#small-btn:hover{
+    background-color: #211d1d;
+}
+
 
 
 .admin-wrapper{
