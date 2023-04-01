@@ -6,7 +6,6 @@
 
 {% block content %}
 <div class="wrapper">
-    <!-- <button id="show-panel"><<</button> -->
     <div class="box-1" id="panel">
         <header class="username-display">
             <b id="account-name">{{ usr_name }}</b>
@@ -23,12 +22,15 @@
                 <tr>
                     <th>
                         <a id="notes-name" href='/{{ notes.id }}'>{{ notes.title }}</a>
-                        <a id="delete-btn" href="/delete/{{ notes.id }}">| X</a>
+                        <a id="delete-btn" href="/delete/{{ notes.id }}">| Delete</a>
                     </th>
                 </tr>   
                 {% endfor %}
             </table>
         </div>
+    </div>
+    <div class="burger-btn-panel">
+        <button type="button" id="burger-btn">=</button>
     </div>
     <div id="spacer-1"></div>
     <div class="box-2">

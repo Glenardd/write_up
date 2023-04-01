@@ -25,8 +25,8 @@ body{
 .form-1{
     padding: 20px 20px 20px;
 }
-#titles-for{
-    width: 30px;
+#titles-form{
+    width: clamp(100px, 150px, 300px);
 }
 
 .box-1{
@@ -51,7 +51,7 @@ textarea{
 
     color: white;
 
-    width:  calc(100vw - 350px);      /* calc and viewport to the rescue */
+    width:  calc(100vw - 390px);      /* calc and viewport to the rescue */
     height: calc(100vh - 150px);
 }
 
@@ -154,6 +154,11 @@ textarea{
 /* accounts name */
 #warning{
     font-family: 'Poppins', sans-serif;
+    font-size: clamp(15px, 10px, 15px);
+
+    margin-left: 10px;
+    
+    color: white;
 }
 
 #account-name{
@@ -196,8 +201,9 @@ textarea{
     color: #995c3c;
 }
 
-#notes-name:active, #notes-name:focus { background: aqua; }
+#notes-name:active { background: aqua; }
 
+#notes-name:focus  { background: aqua }
 
 #delete-btn{
     text-decoration: none;
@@ -219,7 +225,29 @@ textarea{
     background-color: #211d1d;
 }
 
+/* burger btn */
+#burger-btn{
+    color: white;
+    font-size: 25px;
+    background-color: #f49560;
+    border-style: none;
 
+}
+
+#burger-btn:hover{
+    color:#605656
+}
+
+.burger-btn-panel{
+    background-color: #f49560;
+}
+
+.warning-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
 
 .admin-wrapper{
     display: flex;
