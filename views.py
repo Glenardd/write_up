@@ -1,5 +1,4 @@
 from flask import render_template, redirect, url_for, request, session, flash
-
 from models import Account, Notes
 from config import app, db
 
@@ -63,7 +62,7 @@ def home():
 
         user_id = db.session.query(Account.user_id).filter_by(username=usr_name)
 
-        notes_id = db.session.query(Notes.id, Notes.title).filter_by(account_id=user_id).all()
+        notes_id = db.session.query(Notes).filter_by(account_id=user_id).all()
        
         return render_template('index.html', Notes=notes_id, usr_name=usr_name)
     else:
@@ -92,7 +91,11 @@ def response(id_):
     if 'user-response' in session:
         usr_name = session['user-response']
 
-        return render_template('response.html' ,notes_open=Notes.query.get(id_) ,Notes=Notes.query.all(), id_content=id_, usr_name=usr_name)
+        user_id = Notes.query.get(id_)
+
+        notes_id = db.session.query(Notes.id, Notes.title).filter_by(account_id=id_).all()
+
+        return render_template('response.html' ,notes_open=user_id ,Notes=notes_id, id_content=id_, usr_name=usr_name)
     else:
         return redirect(url_for('login'))
 
